@@ -1,5 +1,4 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
-// import { nanoid } from 'nanoid';
 import { fetchContacts, addContact, deleteContact } from './operations';
 
 const arrOfThunk = [fetchContacts, addContact, deleteContact];
@@ -41,9 +40,11 @@ const contactsSlice = createSlice({
   },
   extraReducers: builder => {
     builder
+
       .addCase(fetchContacts.fulfilled, handleFulfilledGet)
       .addCase(addContact.fulfilled, handleFulfilledAdd)
       .addCase(deleteContact.fulfilled, handleFulfilledDelete)
+
       .addMatcher(isAnyOf(...fnMap('pending')), handlePending)
       .addMatcher(isAnyOf(...fnMap('rejected')), handleRejected)
       .addMatcher(isAnyOf(...fnMap('fulfilled')), handleFulfilled);

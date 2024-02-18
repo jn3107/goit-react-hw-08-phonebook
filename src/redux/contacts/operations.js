@@ -3,7 +3,7 @@ import {
   fetchAllContacts,
   addContactData,
   deleteContactData,
-} from 'services/services';
+} from 'services/userApi.js';
 
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchAllContacts',
@@ -19,17 +19,16 @@ export const fetchContacts = createAsyncThunk(
 
 export const addContact = createAsyncThunk(
   'contacts/addContact',
-  async (contact, thunkApi) => {
+  async ({ name, number }, thunkAPI) => {
     try {
-      const response = await addContactData(contact);
+      const response = await addContactData({ name, number });
       return response.data;
     } catch (error) {
-      return thunkApi.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
 addContact();
-
 export const deleteContact = createAsyncThunk(
   'contacts/deleteContact',
   async (contactId, thunkAPI) => {

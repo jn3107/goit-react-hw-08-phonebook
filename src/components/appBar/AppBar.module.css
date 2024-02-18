@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgb(6, 167, 162);
+  margin-bottom: 16px;
+  border: 4px solid orange;
+  box-shadow: 5px 5px 9px -1px rgba(210, 105, 30, 1);
+  -webkit-box-shadow: 5px, 5px, 9px, -1px rgba(210, 105, 30, 1);
+  -moz-box-shadow: 5px, 5px, 9px, -1px rgba(210, 105, 30, 1);
+  padding: 15px 10px;
+  border-radius: 15px;
+  max-width: 600px;
+  height: auto;
+  margin: 0 auto;
+}
