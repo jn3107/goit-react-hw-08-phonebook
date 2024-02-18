@@ -1,5 +1,5 @@
 import { SectionTitle } from 'components/sectionTitle/SectionTitle';
-import css from './contacts/Contacts.module.css';
+import css from './contact/Contacts.module.css';
 
 const Home = () => {
   return (

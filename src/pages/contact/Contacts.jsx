@@ -21,7 +21,7 @@ const Contacts = () => {
   }, [dispatch]);
 
   return (
-    <div className={css.wrapper}>
+    <div className={css.container}>
       <NotificationContainer />
       <SectionTitle title="Phonebook" />
       <ContactForm />
